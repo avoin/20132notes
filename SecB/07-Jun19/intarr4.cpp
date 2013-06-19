@@ -24,9 +24,6 @@ public:
   unsigned int Size()const{
     return _size;
   }
-  operator int*(){
-    return _data;
-  }
   virtual ~IntArr(){
     if(_data){
       delete[] _data;
@@ -45,12 +42,5 @@ int main(){
     cout<<I[i]<<" ";
   }
   cout<<endl;
-  int* p= (int*)I;
-  for(i=0;i<I.Size();i++){
-    cout<<p[i]<<" ";
-  } 
   return 0;
 }
-
-
-

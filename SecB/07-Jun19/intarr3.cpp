@@ -9,23 +9,10 @@ public:
     _data = new int[_size];
   }
   int& operator[](unsigned int index){
-    if(index >= _size){
-      unsigned int newsize = index < 1024 ? index * 2 : index + 1024;
-      int* temp = new int[newsize];
-      for(int i=0;i<_size;i++){
-        temp[i] = _data[i];
-      }
-      delete[] _data;
-      _data = temp;
-      _size = newsize;
-    }
-    return _data[index];
+    return _data[index%_size];
   }
   unsigned int Size()const{
     return _size;
-  }
-  operator int*(){
-    return _data;
   }
   virtual ~IntArr(){
     if(_data){
@@ -39,18 +26,12 @@ int main(){
   IntArr I(5);
   int i;
   for(i=0;i<7;i++){
-    I[i] = i*10;
+ //   I.operator[](i) = i*10;
+    I[i] = i * 10;
   }
   for(i=0;i<I.Size();i++){
     cout<<I[i]<<" ";
   }
   cout<<endl;
-  int* p= (int*)I;
-  for(i=0;i<I.Size();i++){
-    cout<<p[i]<<" ";
-  } 
   return 0;
 }
-
-
-
