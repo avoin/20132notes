@@ -18,7 +18,7 @@ namespace oop344{
     Queue();
     virtual ~Queue();
     void add(const char* data);
-    void remove(char* dataout);
+    void remove(char* dataout=(char*)0);
     bool isEmpty();
   };
 
