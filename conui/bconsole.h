@@ -5,8 +5,8 @@
 // conbio.h
 //
 // Fardad Soleimanloo, Chris Szalwinski
-// Jan 12 2012
-// Version 1.0
+// Jun 01 2013
+// Version 1.03
 
 namespace bio {
 
@@ -64,6 +64,7 @@ namespace bio {
     unsigned int strlen(const void* str);
     char* strcpy(void* des, const void* src);
     char* strncpy(void* des, const void* src, unsigned int len);
+    char* strcat(void* des, const void *src);
     //end tools
 
 } // end namespace bio
