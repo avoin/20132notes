@@ -1,3 +1,4 @@
+// 4 marks each stage
 w1-----
 1200
 4
